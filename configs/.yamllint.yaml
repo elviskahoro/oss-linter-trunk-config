@@ -10,8 +10,11 @@ rules:
   brackets: false
   colons: enable
   commas: enable
+  # yamlfmt normalizes inline comments to one space, which yamllint's default
+  # (2) rejects; match the formatter so the two don't fight.
   comments:
     level: warning
+    min-spaces-from-content: 1
   comments-indentation:
     level: warning
   document-end: disable
